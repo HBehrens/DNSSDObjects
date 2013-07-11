@@ -1,0 +1,7 @@
+language: objective-c
+before_install: 
+  - Scripts/install-travis.sh
+script:
+  - Scripts/build-ios.sh
+  - Scripts/build-osx.sh
+  - pod spec lint
