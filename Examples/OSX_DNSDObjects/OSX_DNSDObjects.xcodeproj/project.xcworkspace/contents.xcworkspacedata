@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:DNSSDObjects.xcodeproj">
+      location = "self:OSX_DNSDObjects.xcodeproj">
    </FileRef>
 </Workspace>
