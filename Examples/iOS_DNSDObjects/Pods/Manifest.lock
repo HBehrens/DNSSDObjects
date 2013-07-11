@@ -1,0 +1,14 @@
+PODS:
+  - DNSSDObjects (0.0.1)
+
+DEPENDENCIES:
+  - DNSSDObjects (from `../..`)
+
+EXTERNAL SOURCES:
+  DNSSDObjects:
+    :path: ../..
+
+SPEC CHECKSUMS:
+  DNSSDObjects: a9dfb25a67eed9615698726d28f6ad664b58469b
+
+COCOAPODS: 0.21.0

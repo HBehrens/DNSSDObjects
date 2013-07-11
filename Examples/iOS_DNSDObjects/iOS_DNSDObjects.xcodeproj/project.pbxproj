@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F104B678E564530AAB5132C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 72284495E17A47C891AE9524 /* libPods.a */; };
 		CB249CF2178EE2F200F2EA3D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB249CF1178EE2F200F2EA3D /* UIKit.framework */; };
 		CB249CF4178EE2F200F2EA3D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB249CF3178EE2F200F2EA3D /* Foundation.framework */; };
 		CB249CF6178EE2F200F2EA3D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB249CF5178EE2F200F2EA3D /* CoreGraphics.framework */; };
@@ -23,9 +24,6 @@
 		CB249D18178EE2F300F2EA3D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB249CF3178EE2F200F2EA3D /* Foundation.framework */; };
 		CB249D20178EE2F300F2EA3D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB249D1E178EE2F300F2EA3D /* InfoPlist.strings */; };
 		CB249D23178EE2F300F2EA3D /* iOS_DNSDObjectsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CB249D22178EE2F300F2EA3D /* iOS_DNSDObjectsTests.m */; };
-		CB249D33178EE38300F2EA3D /* DNSSDBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = CB249D2E178EE38300F2EA3D /* DNSSDBrowser.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		CB249D34178EE38300F2EA3D /* DNSSDRegistration.m in Sources */ = {isa = PBXBuildFile; fileRef = CB249D30178EE38300F2EA3D /* DNSSDRegistration.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		CB249D35178EE38300F2EA3D /* DNSSDService.m in Sources */ = {isa = PBXBuildFile; fileRef = CB249D32178EE38300F2EA3D /* DNSSDService.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		72284495E17A47C891AE9524 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		9284D75664F645D7B40D4999 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		CB249CEE178EE2F200F2EA3D /* iOS_DNSDObjects.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS_DNSDObjects.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB249CF1178EE2F200F2EA3D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CB249CF3178EE2F200F2EA3D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -61,12 +61,6 @@
 		CB249D1F178EE2F300F2EA3D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CB249D21178EE2F300F2EA3D /* iOS_DNSDObjectsTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iOS_DNSDObjectsTests.h; sourceTree = "<group>"; };
 		CB249D22178EE2F300F2EA3D /* iOS_DNSDObjectsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOS_DNSDObjectsTests.m; sourceTree = "<group>"; };
-		CB249D2D178EE38300F2EA3D /* DNSSDBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNSSDBrowser.h; sourceTree = "<group>"; };
-		CB249D2E178EE38300F2EA3D /* DNSSDBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNSSDBrowser.m; sourceTree = "<group>"; };
-		CB249D2F178EE38300F2EA3D /* DNSSDRegistration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNSSDRegistration.h; sourceTree = "<group>"; };
-		CB249D30178EE38300F2EA3D /* DNSSDRegistration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNSSDRegistration.m; sourceTree = "<group>"; };
-		CB249D31178EE38300F2EA3D /* DNSSDService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNSSDService.h; sourceTree = "<group>"; };
-		CB249D32178EE38300F2EA3D /* DNSSDService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNSSDService.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +71,7 @@
 				CB249CF2178EE2F200F2EA3D /* UIKit.framework in Frameworks */,
 				CB249CF4178EE2F200F2EA3D /* Foundation.framework in Frameworks */,
 				CB249CF6178EE2F200F2EA3D /* CoreGraphics.framework in Frameworks */,
+				8F104B678E564530AAB5132C /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,11 +91,11 @@
 		CB249CE5178EE2F200F2EA3D = {
 			isa = PBXGroup;
 			children = (
-				CB249D2C178EE38300F2EA3D /* Source */,
 				CB249CF7178EE2F200F2EA3D /* iOS_DNSDObjects */,
 				CB249D1B178EE2F300F2EA3D /* iOS_DNSDObjectsTests */,
 				CB249CF0178EE2F200F2EA3D /* Frameworks */,
 				CB249CEF178EE2F200F2EA3D /* Products */,
+				9284D75664F645D7B40D4999 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -120,6 +115,7 @@
 				CB249CF3178EE2F200F2EA3D /* Foundation.framework */,
 				CB249CF5178EE2F200F2EA3D /* CoreGraphics.framework */,
 				CB249D15178EE2F300F2EA3D /* SenTestingKit.framework */,
+				72284495E17A47C891AE9524 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -170,20 +166,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		CB249D2C178EE38300F2EA3D /* Source */ = {
-			isa = PBXGroup;
-			children = (
-				CB249D2D178EE38300F2EA3D /* DNSSDBrowser.h */,
-				CB249D2E178EE38300F2EA3D /* DNSSDBrowser.m */,
-				CB249D2F178EE38300F2EA3D /* DNSSDRegistration.h */,
-				CB249D30178EE38300F2EA3D /* DNSSDRegistration.m */,
-				CB249D31178EE38300F2EA3D /* DNSSDService.h */,
-				CB249D32178EE38300F2EA3D /* DNSSDService.m */,
-			);
-			name = Source;
-			path = ../../Source;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -191,9 +173,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CB249D26178EE2F300F2EA3D /* Build configuration list for PBXNativeTarget "iOS_DNSDObjects" */;
 			buildPhases = (
+				E3BB93F50B0A4BE1B18AB039 /* Check Pods Manifest.lock */,
 				CB249CEA178EE2F200F2EA3D /* Sources */,
 				CB249CEB178EE2F200F2EA3D /* Frameworks */,
 				CB249CEC178EE2F200F2EA3D /* Resources */,
+				78F089C634F44EC097080A60 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -274,6 +258,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		78F089C634F44EC097080A60 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
 		CB249D12178EE2F300F2EA3D /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -287,6 +285,20 @@
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
 		};
+		E3BB93F50B0A4BE1B18AB039 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -297,9 +309,6 @@
 				CB249CFE178EE2F200F2EA3D /* main.m in Sources */,
 				CB249D02178EE2F200F2EA3D /* AppDelegate.m in Sources */,
 				CB249D0B178EE2F200F2EA3D /* ViewController.m in Sources */,
-				CB249D33178EE38300F2EA3D /* DNSSDBrowser.m in Sources */,
-				CB249D34178EE38300F2EA3D /* DNSSDRegistration.m in Sources */,
-				CB249D35178EE38300F2EA3D /* DNSSDService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,6 +416,7 @@
 		};
 		CB249D27178EE2F300F2EA3D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9284D75664F645D7B40D4999 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iOS_DNSDObjects/iOS_DNSDObjects-Prefix.pch";
@@ -418,6 +428,7 @@
 		};
 		CB249D28178EE2F300F2EA3D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9284D75664F645D7B40D4999 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iOS_DNSDObjects/iOS_DNSDObjects-Prefix.pch";
@@ -480,6 +491,7 @@
 				CB249D28178EE2F300F2EA3D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CB249D29178EE2F300F2EA3D /* Build configuration list for PBXNativeTarget "iOS_DNSDObjectsTests" */ = {
 			isa = XCConfigurationList;
@@ -488,6 +500,7 @@
 				CB249D2B178EE2F300F2EA3D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

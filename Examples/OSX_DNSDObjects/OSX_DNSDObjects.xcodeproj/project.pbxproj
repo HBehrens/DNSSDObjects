@@ -7,12 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D7704D1A2AC4FF9BD4CDF3F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E4A292804AF458BBBB2DDA5 /* libPods.a */; };
 		CB7A5233178EE21200E3D0E5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB7A5232178EE21200E3D0E5 /* Foundation.framework */; };
 		CB7A5236178EE21200E3D0E5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CB7A5235178EE21200E3D0E5 /* main.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		CB7A523A178EE21200E3D0E5 /* OSX_DNSDObjects.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = CB7A5239178EE21200E3D0E5 /* OSX_DNSDObjects.1 */; };
-		CB7A5247178EE25400E3D0E5 /* DNSSDBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = CB7A5242178EE25400E3D0E5 /* DNSSDBrowser.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		CB7A5248178EE25400E3D0E5 /* DNSSDRegistration.m in Sources */ = {isa = PBXBuildFile; fileRef = CB7A5244178EE25400E3D0E5 /* DNSSDRegistration.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		CB7A5249178EE25400E3D0E5 /* DNSSDService.m in Sources */ = {isa = PBXBuildFile; fileRef = CB7A5246178EE25400E3D0E5 /* DNSSDService.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,17 +27,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1E4A292804AF458BBBB2DDA5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FFBC90D0325436388C907A7 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		CB7A522F178EE21200E3D0E5 /* OSX_DNSDObjects */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OSX_DNSDObjects; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB7A5232178EE21200E3D0E5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CB7A5235178EE21200E3D0E5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CB7A5238178EE21200E3D0E5 /* OSX_DNSDObjects-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OSX_DNSDObjects-Prefix.pch"; sourceTree = "<group>"; };
 		CB7A5239178EE21200E3D0E5 /* OSX_DNSDObjects.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = OSX_DNSDObjects.1; sourceTree = "<group>"; };
-		CB7A5241178EE25400E3D0E5 /* DNSSDBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNSSDBrowser.h; sourceTree = "<group>"; };
-		CB7A5242178EE25400E3D0E5 /* DNSSDBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNSSDBrowser.m; sourceTree = "<group>"; };
-		CB7A5243178EE25400E3D0E5 /* DNSSDRegistration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNSSDRegistration.h; sourceTree = "<group>"; };
-		CB7A5244178EE25400E3D0E5 /* DNSSDRegistration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNSSDRegistration.m; sourceTree = "<group>"; };
-		CB7A5245178EE25400E3D0E5 /* DNSSDService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNSSDService.h; sourceTree = "<group>"; };
-		CB7A5246178EE25400E3D0E5 /* DNSSDService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNSSDService.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +42,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB7A5233178EE21200E3D0E5 /* Foundation.framework in Frameworks */,
+				4D7704D1A2AC4FF9BD4CDF3F /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,10 +52,10 @@
 		CB7A5226178EE21200E3D0E5 = {
 			isa = PBXGroup;
 			children = (
-				CB7A5240178EE25400E3D0E5 /* Source */,
 				CB7A5234178EE21200E3D0E5 /* OSX_DNSDObjects */,
 				CB7A5231178EE21200E3D0E5 /* Frameworks */,
 				CB7A5230178EE21200E3D0E5 /* Products */,
+				3FFBC90D0325436388C907A7 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				CB7A5232178EE21200E3D0E5 /* Foundation.framework */,
+				1E4A292804AF458BBBB2DDA5 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -98,20 +94,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		CB7A5240178EE25400E3D0E5 /* Source */ = {
-			isa = PBXGroup;
-			children = (
-				CB7A5241178EE25400E3D0E5 /* DNSSDBrowser.h */,
-				CB7A5242178EE25400E3D0E5 /* DNSSDBrowser.m */,
-				CB7A5243178EE25400E3D0E5 /* DNSSDRegistration.h */,
-				CB7A5244178EE25400E3D0E5 /* DNSSDRegistration.m */,
-				CB7A5245178EE25400E3D0E5 /* DNSSDService.h */,
-				CB7A5246178EE25400E3D0E5 /* DNSSDService.m */,
-			);
-			name = Source;
-			path = ../../Source;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -119,9 +101,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CB7A523D178EE21200E3D0E5 /* Build configuration list for PBXNativeTarget "OSX_DNSDObjects" */;
 			buildPhases = (
+				1ECDEACFCA7444E1990C3C40 /* Check Pods Manifest.lock */,
 				CB7A522B178EE21200E3D0E5 /* Sources */,
 				CB7A522C178EE21200E3D0E5 /* Frameworks */,
 				CB7A522D178EE21200E3D0E5 /* CopyFiles */,
+				C7ACF2ABBBCB4C4BA211EDF5 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -158,15 +142,43 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1ECDEACFCA7444E1990C3C40 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+		};
+		C7ACF2ABBBCB4C4BA211EDF5 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CB7A522B178EE21200E3D0E5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				CB7A5236178EE21200E3D0E5 /* main.m in Sources */,
-				CB7A5247178EE25400E3D0E5 /* DNSSDBrowser.m in Sources */,
-				CB7A5248178EE25400E3D0E5 /* DNSSDRegistration.m in Sources */,
-				CB7A5249178EE25400E3D0E5 /* DNSSDService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,6 +246,7 @@
 		};
 		CB7A523E178EE21200E3D0E5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3FFBC90D0325436388C907A7 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OSX_DNSDObjects/OSX_DNSDObjects-Prefix.pch";
@@ -243,6 +256,7 @@
 		};
 		CB7A523F178EE21200E3D0E5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3FFBC90D0325436388C907A7 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OSX_DNSDObjects/OSX_DNSDObjects-Prefix.pch";
@@ -269,6 +283,7 @@
 				CB7A523F178EE21200E3D0E5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
