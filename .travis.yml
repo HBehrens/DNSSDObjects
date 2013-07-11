@@ -4,4 +4,4 @@ before_install:
 script:
   - Scripts/build-ios.sh
   - Scripts/build-osx.sh
-  - pod spec lint
+  - Scripts/lint-podspec.sh
