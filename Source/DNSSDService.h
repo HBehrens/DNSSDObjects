@@ -121,6 +121,7 @@
 
 @property (copy,   readonly ) NSString * resolvedHost;
 @property (assign, readonly ) NSUInteger resolvedPort;
+@property (copy,   readonly ) NSDictionary * resolvedTxtRecord;
 
 @end
 

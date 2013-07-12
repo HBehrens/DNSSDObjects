@@ -32,17 +32,6 @@
     [self.window makeKeyAndVisible];
     
     _services = NSMutableSet.set;
-    NSString* txtValue = @"foobar";
-    u_char l = strlen(txtValue.UTF8String);
-    char* pascalString = malloc(1+l);
-    pascalString[0] = l;
-    strcpy(&pascalString[1], txtValue.UTF8String);
-    
-//    //char* txtRecord = "\4test";
-//    char* txtRecord = pascalString;
-//    uint16_t txtLen = strlen(txtRecord);
-//    txtRecord = NULL;
-//    txtLen = 0;
     NSDictionary* txtRecords = @{@"someKey": @"someValue"};
     
     _reg = [DNSSDRegistration.alloc initWithDomain:nil type:@"_http._tcp." name:nil port:1292 txtRecord:txtRecords];
@@ -77,7 +66,7 @@
 #pragma mark - DNSSDServiceDelegate
 
 - (void)dnssdServiceDidResolveAddress:(DNSSDService *)service{
-    NSLog(@"did resolve %@ as %@:%d", service, service.resolvedHost, service.resolvedPort);
+    NSLog(@"did resolve %@ as %@:%d txt %@", service, service.resolvedHost, service.resolvedPort, service.resolvedTxtRecord);
 }
 
 @end

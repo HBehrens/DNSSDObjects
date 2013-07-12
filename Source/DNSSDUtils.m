@@ -41,5 +41,30 @@ NSString* DNSSD_NSStringFromTxtRecord(NSDictionary *txtRecord, NSError** error) 
     } else {
         return nil;
     }
+}
 
+NSDictionary *DNSSD_NSDictionaryFromTxtRecord(NSString* txtRecord) {
+    if(txtRecord) {
+        NSMutableDictionary *result = @{}.mutableCopy;
+
+        char *s = (char *)txtRecord.UTF8String;
+        char entryLen = *s++;
+        while(entryLen > 0){
+            NSString *entry = [NSString.alloc initWithBytes:s length:(NSUInteger) entryLen encoding:NSUTF8StringEncoding];
+            NSArray *keyValue = [entry componentsSeparatedByString:@"="];
+
+            if(keyValue.count>0) {
+                if(keyValue.count>=2) {
+                    result[keyValue[0]] = keyValue[1];
+                } else {
+                    result[keyValue[0]] = @YES;
+                }
+            }
+            s+= entryLen;
+            entryLen = *s++;
+        }
+        return result;
+    } else {
+        return nil;
+    }
 }

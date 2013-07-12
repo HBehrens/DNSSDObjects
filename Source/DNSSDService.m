@@ -52,6 +52,7 @@
 */
 
 #import "DNSSDService.h"
+#import "DNSSDUtils.h"
 
 #include <dns_sd.h>
 
@@ -63,6 +64,7 @@
 
 @property (copy,   readwrite) NSString * resolvedHost;
 @property (assign, readwrite) NSUInteger resolvedPort;
+@property (copy,   readwrite) NSDictionary * resolvedTxtRecord;
 
 // private properties
 
@@ -85,6 +87,7 @@
 
 @synthesize resolvedHost = resolvedHost_;
 @synthesize resolvedPort = resolvedPort_;
+@synthesize resolvedTxtRecord = resolvedTxtRecord_;
 
 @synthesize sdRef = sdRef_;
 @synthesize resolveTimeoutTimer = resolveTimeoutTimer_;
@@ -126,6 +129,7 @@
     [self->type_ release];
     [self->name_ release];
     [self->resolvedHost_ release];
+    [self->resolvedTxtRecord_ release];
     [super dealloc];
 }
 
@@ -172,15 +176,14 @@
     return [NSString stringWithFormat:@"%@ {%@, %@, %@}", [super description], self.domain, self.type, self.name];
 }
 
-- (void)resolveReplyWithTarget:(NSString *)resolvedHost port:(NSUInteger)port
-    // Called when DNS-SD tells us that a resolve has succeeded.
-{
+- (void)resolveReplyWithTarget:(NSString *)resolvedHost port:(NSUInteger)port txtRecord:(NSString *)txtRecord {
     assert(resolvedHost != nil);
     
     // Latch the results.
     
     self.resolvedHost = resolvedHost;
     self.resolvedPort = port;
+    self.resolvedTxtRecord = DNSSD_NSDictionaryFromTxtRecord(txtRecord);
     
     // Tell our delegate.
     
@@ -220,11 +223,9 @@ static void ResolveReplyCallback(
     #pragma unused(sdRef)
     #pragma unused(flags)
     #pragma unused(fullname)
-    #pragma unused(txtLen)
-    #pragma unused(txtRecord)
-    
+
     if (errorCode == kDNSServiceErr_NoError) {
-        [obj resolveReplyWithTarget:[NSString stringWithUTF8String:hosttarget] port:ntohs(port)];
+        [obj resolveReplyWithTarget:[NSString stringWithUTF8String:hosttarget] port:ntohs(port) txtRecord:[NSString.alloc initWithBytes:txtRecord length:txtLen encoding:NSUTF8StringEncoding]];
     } else {
         [obj stopWithError:[NSError errorWithDomain:NSNetServicesErrorDomain code:errorCode userInfo:nil] notify:YES];
     }
