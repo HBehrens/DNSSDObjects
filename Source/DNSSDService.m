@@ -237,7 +237,7 @@ static void ResolveReplyCallback(
     if (self.sdRef == NULL) {
         DNSServiceErrorType errorCode;
 
-        errorCode = DNSServiceResolve(&self->sdRef_, 0, kDNSServiceInterfaceIndexAny, [self.name UTF8String], [self.type UTF8String], [self.domain UTF8String], ResolveReplyCallback, self);
+        errorCode = DNSServiceResolve(&self->sdRef_, DNSSD_SERVICE_FLAGS, kDNSServiceInterfaceIndexAny, [self.name UTF8String], [self.type UTF8String], [self.domain UTF8String], ResolveReplyCallback, self);
         if (errorCode == kDNSServiceErr_NoError) {
             errorCode = DNSServiceSetDispatchQueue(self.sdRef, dispatch_get_main_queue());
         }

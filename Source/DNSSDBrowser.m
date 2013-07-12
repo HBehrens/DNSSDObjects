@@ -52,6 +52,7 @@
 */
 
 #import "DNSSDBrowser.h"
+#import "DNSSDUtils.h"
 
 #include <dns_sd.h>
 
@@ -176,8 +177,8 @@ static void BrowseReplyCallback(
         if (domain == nil) {
             domain = @"";
         }
-        
-        errorCode = DNSServiceBrowse(&self->sdRef_, 0, kDNSServiceInterfaceIndexAny, [self.type UTF8String], [domain UTF8String], BrowseReplyCallback, self);
+
+        errorCode = DNSServiceBrowse(&self->sdRef_, DNSSD_SERVICE_FLAGS, kDNSServiceInterfaceIndexAny, [self.type UTF8String], [domain UTF8String], BrowseReplyCallback, self);
         if (errorCode == kDNSServiceErr_NoError) {
             errorCode = DNSServiceSetDispatchQueue(self.sdRef, dispatch_get_main_queue());
         }

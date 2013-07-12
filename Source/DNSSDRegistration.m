@@ -236,7 +236,7 @@ static void RegisterReplyCallback(
         if(txtRecordError) {
             [self stopWithError:txtRecordError notify:YES];
         } else {
-            errorCode = DNSServiceRegister(&self->sdRef_, 0, kDNSServiceInterfaceIndexAny, [name UTF8String], [self.type UTF8String], [domain UTF8String], NULL, htons(self.port), [txtRecord lengthOfBytesUsingEncoding:NSUTF8StringEncoding], txtRecord.UTF8String, RegisterReplyCallback, self);
+            errorCode = DNSServiceRegister(&self->sdRef_, DNSSD_SERVICE_FLAGS, kDNSServiceInterfaceIndexAny, [name UTF8String], [self.type UTF8String], [domain UTF8String], NULL, htons(self.port), [txtRecord lengthOfBytesUsingEncoding:NSUTF8StringEncoding], txtRecord.UTF8String, RegisterReplyCallback, self);
             if (errorCode == kDNSServiceErr_NoError) {
                 errorCode = DNSServiceSetDispatchQueue(self.sdRef, dispatch_get_main_queue());
             }
