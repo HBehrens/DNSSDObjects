@@ -104,7 +104,7 @@ static NSString * Quote(NSString * str)
     assert(self.type != nil);
     assert(self.registration == nil);
     
-    self.registration = [[[DNSSDRegistration alloc] initWithDomain:nil type:self.type name:nil port:self.port] autorelease];
+    self.registration = [[[DNSSDRegistration alloc] initWithDomain:nil type:self.type name:nil port:self.port txtRecord:nil] autorelease];
     assert(self.registration != nil);
     
     self.registration.delegate = self;

@@ -24,6 +24,7 @@
 		CB249D18178EE2F300F2EA3D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB249CF3178EE2F200F2EA3D /* Foundation.framework */; };
 		CB249D20178EE2F300F2EA3D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB249D1E178EE2F300F2EA3D /* InfoPlist.strings */; };
 		CB249D23178EE2F300F2EA3D /* iOS_DNSDObjectsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CB249D22178EE2F300F2EA3D /* iOS_DNSDObjectsTests.m */; };
+		CBAF4E781790250E00ACD4CA /* DNSSDUtilsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CBAF4E771790250E00ACD4CA /* DNSSDUtilsTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,8 +60,12 @@
 		CB249D15178EE2F300F2EA3D /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		CB249D1D178EE2F300F2EA3D /* iOS_DNSDObjectsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iOS_DNSDObjectsTests-Info.plist"; sourceTree = "<group>"; };
 		CB249D1F178EE2F300F2EA3D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		CB249D21178EE2F300F2EA3D /* iOS_DNSDObjectsTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iOS_DNSDObjectsTests.h; sourceTree = "<group>"; };
 		CB249D22178EE2F300F2EA3D /* iOS_DNSDObjectsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOS_DNSDObjectsTests.m; sourceTree = "<group>"; };
+		CBAF4E771790250E00ACD4CA /* DNSSDUtilsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNSSDUtilsTests.m; sourceTree = "<group>"; };
+		CBAF4E7A1790252500ACD4CA /* DNSSDBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNSSDBrowser.h; path = ../../../Source/DNSSDBrowser.h; sourceTree = "<group>"; };
+		CBAF4E7B1790252500ACD4CA /* DNSSDRegistration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNSSDRegistration.h; path = ../../../Source/DNSSDRegistration.h; sourceTree = "<group>"; };
+		CBAF4E7C1790252500ACD4CA /* DNSSDService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNSSDService.h; path = ../../../Source/DNSSDService.h; sourceTree = "<group>"; };
+		CBAF4E7D1790252500ACD4CA /* DNSSDUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DNSSDUtils.h; path = ../../../Source/DNSSDUtils.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,8 +155,9 @@
 		CB249D1B178EE2F300F2EA3D /* iOS_DNSDObjectsTests */ = {
 			isa = PBXGroup;
 			children = (
-				CB249D21178EE2F300F2EA3D /* iOS_DNSDObjectsTests.h */,
+				CBAF4E791790251700ACD4CA /* Headers */,
 				CB249D22178EE2F300F2EA3D /* iOS_DNSDObjectsTests.m */,
+				CBAF4E771790250E00ACD4CA /* DNSSDUtilsTests.m */,
 				CB249D1C178EE2F300F2EA3D /* Supporting Files */,
 			);
 			path = iOS_DNSDObjectsTests;
@@ -164,6 +170,17 @@
 				CB249D1E178EE2F300F2EA3D /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CBAF4E791790251700ACD4CA /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				CBAF4E7A1790252500ACD4CA /* DNSSDBrowser.h */,
+				CBAF4E7B1790252500ACD4CA /* DNSSDRegistration.h */,
+				CBAF4E7C1790252500ACD4CA /* DNSSDService.h */,
+				CBAF4E7D1790252500ACD4CA /* DNSSDUtils.h */,
+			);
+			name = Headers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -317,6 +334,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB249D23178EE2F300F2EA3D /* iOS_DNSDObjectsTests.m in Sources */,
+				CBAF4E781790250E00ACD4CA /* DNSSDUtilsTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

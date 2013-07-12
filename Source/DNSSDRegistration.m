@@ -52,6 +52,7 @@
 */
 
 #import "DNSSDRegistration.h"
+#import "DNSSDUtils.h"
 
 #include <dns_sd.h>
 
@@ -80,6 +81,7 @@
 @synthesize type = type_;
 @synthesize name = name_;
 @synthesize port = port_;
+@synthesize txtRecord = txtRecord_;
 
 @synthesize delegate = delegate_;
 
@@ -88,7 +90,7 @@
 
 @synthesize sdRef = sdRef_;
 
-- (id)initWithDomain:(NSString *)domain type:(NSString *)type name:(NSString *)name port:(NSUInteger)port
+- (id)initWithDomain:(NSString *)domain type:(NSString *)type name:(NSString *)name port:(NSUInteger)port txtRecord:(NSDictionary*)txtRecord
     // See comment in header.
 {
     // domain may be nil or empty
@@ -98,6 +100,7 @@
     assert( ! [type hasPrefix:@"."] );
     assert(port > 0);
     assert(port < 65536);
+    assert(DNSSD_validTxtRecord(txtRecord));
 
     self = [super init];
     if (self != nil) {
@@ -111,6 +114,7 @@
         self->type_   = [type copy];
         self->name_   = [name copy];
         self->port_   = port;
+        self->txtRecord_ = [txtRecord copy];
     }
     return self;
 }
@@ -123,6 +127,7 @@
     [self->domain_ release];
     [self->type_ release];
     [self->name_ release];
+    [self->txtRecord_ release];
     [self->registeredName_ release];
     [self->registeredDomain_ release];
     [super dealloc];
@@ -225,17 +230,23 @@ static void RegisterReplyCallback(
         if (name == nil) {
             name = @"";
         }
-    
-        errorCode = DNSServiceRegister(&self->sdRef_, 0, kDNSServiceInterfaceIndexAny, [name UTF8String], [self.type UTF8String], [domain UTF8String], NULL, htons(self.port), 0, NULL, RegisterReplyCallback, self);
-        if (errorCode == kDNSServiceErr_NoError) {
-            errorCode = DNSServiceSetDispatchQueue(self.sdRef, dispatch_get_main_queue());
-        }
-        if (errorCode == kDNSServiceErr_NoError) {
-            if ([self.delegate respondsToSelector:@selector(dnssdRegistrationWillRegister:)]) {
-                [self.delegate dnssdRegistrationWillRegister:self];
-            }
+
+        NSError *txtRecordError;
+        NSString* txtRecord = DNSSD_NSStringFromTxtRecord(self.txtRecord, &txtRecordError);
+        if(txtRecordError) {
+            [self stopWithError:txtRecordError notify:YES];
         } else {
-            [self stopWithError:[NSError errorWithDomain:NSNetServicesErrorDomain code:errorCode userInfo:nil] notify:YES];
+            errorCode = DNSServiceRegister(&self->sdRef_, 0, kDNSServiceInterfaceIndexAny, [name UTF8String], [self.type UTF8String], [domain UTF8String], NULL, htons(self.port), [txtRecord lengthOfBytesUsingEncoding:kCFStringEncodingUTF8], txtRecord.UTF8String, RegisterReplyCallback, self);
+            if (errorCode == kDNSServiceErr_NoError) {
+                errorCode = DNSServiceSetDispatchQueue(self.sdRef, dispatch_get_main_queue());
+            }
+            if (errorCode == kDNSServiceErr_NoError) {
+                if ([self.delegate respondsToSelector:@selector(dnssdRegistrationWillRegister:)]) {
+                    [self.delegate dnssdRegistrationWillRegister:self];
+                }
+            } else {
+                [self stopWithError:[NSError errorWithDomain:NSNetServicesErrorDomain code:errorCode userInfo:nil] notify:YES];
+            }
         }
     }
 }

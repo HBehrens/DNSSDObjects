@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F2DD43B23C1B4D60ACD0BDE3"
+               BlueprintIdentifier = "6959EA523E3542BDA9F7FAD4"
                BuildableName = "libPods-DNSSDObjects.a"
                BlueprintName = "Pods-DNSSDObjects"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">

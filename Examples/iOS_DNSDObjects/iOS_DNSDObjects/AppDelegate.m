@@ -38,13 +38,14 @@
     pascalString[0] = l;
     strcpy(&pascalString[1], txtValue.UTF8String);
     
-    //char* txtRecord = "\4test";
-    char* txtRecord = pascalString;
-    uint16_t txtLen = strlen(txtRecord);
-    txtRecord = NULL;
-    txtLen = 0;
+//    //char* txtRecord = "\4test";
+//    char* txtRecord = pascalString;
+//    uint16_t txtLen = strlen(txtRecord);
+//    txtRecord = NULL;
+//    txtLen = 0;
+    NSDictionary* txtRecords = @{@"someKey": @"someValue"};
     
-    _reg = [DNSSDRegistration.alloc initWithDomain:nil type:@"_http._tcp." name:nil port:1292];
+    _reg = [DNSSDRegistration.alloc initWithDomain:nil type:@"_http._tcp." name:nil port:1292 txtRecord:txtRecords];
     _reg.delegate = self;
     [_reg start];
     

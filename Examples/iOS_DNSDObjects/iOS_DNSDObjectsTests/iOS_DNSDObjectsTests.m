@@ -6,27 +6,22 @@
 //  Copyright (c) 2013 Heiko Behrens. All rights reserved.
 //
 
-#import "iOS_DNSDObjectsTests.h"
+#import <SenTestingKit/SenTestingKit.h>
+
+@interface iOS_DNSDObjectsTests : SenTestCase
+
+@end
 
 @implementation iOS_DNSDObjectsTests
 
 - (void)setUp
 {
     [super setUp];
-    
-    // Set-up code here.
 }
 
 - (void)tearDown
 {
-    // Tear-down code here.
-    
     [super tearDown];
-}
-
-- (void)testExample
-{
-    STFail(@"Unit tests are not implemented yet in iOS_DNSDObjectsTests");
 }
 
 @end

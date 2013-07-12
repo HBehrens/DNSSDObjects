@@ -63,7 +63,7 @@
 
 @interface DNSSDRegistration : NSObject
 
-- (id)initWithDomain:(NSString *)domain type:(NSString *)type name:(NSString *)name port:(NSUInteger)port;
+- (id)initWithDomain:(NSString *)domain type:(NSString *)type name:(NSString *)name port:(NSUInteger)port txtRecord:(NSDictionary*)txtRecord;
     // domain and name can be nil or the empty string to get default behaviour.
     //
     // type must be of the form "_foo._tcp." or "_foo._udp." (possibly without the 
@@ -82,6 +82,7 @@
 @property (copy,   readonly ) NSString * type;
 @property (copy,   readonly ) NSString * name;
 @property (assign, readonly ) NSUInteger port;
+@property (copy,   readonly ) NSDictionary * txtRecord;
 
 // properties that you can change any time
 
